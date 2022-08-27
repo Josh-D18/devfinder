@@ -1,0 +1,5 @@
+.input {
+  @apply text-secondary-400 leading-[25px] text-[13px] not-italic w-full h-full rounded-[15px];
+  background: transparent;
+  color: #fff;
+}
