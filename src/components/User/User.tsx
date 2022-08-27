@@ -5,7 +5,7 @@ const User = () => {
   return (
     <div className="m-[0_auto]">
       <div className="w-[327px] bg-secondary-200 rounded-[15px] h-[517px] mx-[auto] mt-[16px] mb-[79px] md:w-[573px] md:h-[481px]">
-        <div className="flex items-center pl-[24px] pr-[69px]">
+        <div className="flex items-center pl-[24px] pr-[69px] md:pt-[40px]">
           <img
             src={icon}
             alt=""
@@ -29,7 +29,7 @@ const User = () => {
             odio. Quisque volutpat mattis eros.
           </p>
         </div>
-        <div className="w-[279px] h-[85px] bg-secondary-300 flex justify-center items-center m-auto rounded-[10px] mt-[23px] mb-[24px] md:w-[493px] md:justify-start">
+        <div className="w-[279px] h-[85px] bg-secondary-300 flex justify-center items-center m-auto rounded-[10px] mt-[23px] mb-[24px] md:w-[493px] md:justify-start md:mb-[30px]">
           <div className="mr-[1px] text-center w-[79px] pt-[18px] pb-[19px] md:mr-[99px] md:w-[40px] md:ml-[32px]">
             <p className="font-[400] not-italic text-[11px] leading-[16px] text-secondary-400">
               Repos

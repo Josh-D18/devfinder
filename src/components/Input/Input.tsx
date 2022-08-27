@@ -8,7 +8,7 @@ const Input = () => {
         <img
           src={searchIcon}
           alt=""
-          className="max-w-[20.05px] max-h-[20px] w-full h-full relative right-[139px] top-[20px] md:right-[258px] md:top-[25px]"
+          className="max-w-[20.05px] max-h-[20px] w-full h-full relative right-[139px] top-[20px] md:right-[244px] md:top-[25px] md:max-w-[24.06px] md:max-h-[24px] "
         />
       </div>
       <input className={styles.input} placeholder="Search GitHub username…" />
