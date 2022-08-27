@@ -1,4 +1,3 @@
-import React from "react";
 import icon from "../../assets/favicon-32x32.png";
 import Links from "./ui/Links/Links";
 

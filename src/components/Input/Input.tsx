@@ -1,4 +1,3 @@
-import { useState } from "react";
 import searchIcon from "../../assets/icon-search.svg";
 import styles from "./Input.module.css";
 

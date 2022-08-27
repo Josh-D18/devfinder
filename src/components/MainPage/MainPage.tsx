@@ -1,5 +1,5 @@
 import Input from "../Input/Input";
-import dark from "../../assets/icon-moon.svg";
+// import dark from "../../assets/icon-moon.svg";
 import light from "../../assets/icon-sun.svg";
 import User from "../User/User";
 
