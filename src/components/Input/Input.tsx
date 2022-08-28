@@ -25,5 +25,3 @@ const Input = () => {
 };
 
 export default Input;
-
-// w-[327px] h-[60px] bg-secondary-200  rounded-[15px] bg-searchIcon bg-no-repeat  px-[16px] pl-[45px] bg-[16px_50%]

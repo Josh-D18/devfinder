@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import Input from "../Input/Input";
 // import dark from "../../assets/icon-moon.svg";
 import light from "../../assets/icon-sun.svg";
 import User from "../User/User";
+import { getUserApi } from "../api/getUser";
 
 export const MainPage = () => {
+  console.log(getUserApi());
+  useEffect(() => {}, []);
+
   return (
     <div className="w-full h-full bg-secondary-300 ">
       <div className="flex flex-col items-center px-[24px] justify-between  m-[0_auto] h-auto">
