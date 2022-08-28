@@ -12,7 +12,7 @@ interface ILinks {
 
 const Links = (props: ILinks) => {
   return (
-    <div className="mb-[48px] md:mb-[40px] w-[185px] md:flex md:items-center md:w-[429px] md:pl-[40px]">
+    <div className="mb-[48px] md:mb-[40px] w-[185px] md:flex md:items-center md:w-[429px] md:pl-[40px] lg:pl-[0] lg:mb-[48px]">
       <div className="md:mr-[65px]">
         <div className="flex items-center pb-[16px] max-w-[208px]">
           <img

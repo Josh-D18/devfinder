@@ -5,9 +5,9 @@ import User from "../User/User";
 
 export const MainPage = () => {
   return (
-    <div className="w-full  bg-secondary-300 h-full ">
+    <div className="w-full h-full bg-secondary-300 ">
       <div className="flex flex-col items-center px-[24px] justify-between  m-[0_auto] h-auto">
-        <div className="flex max-w-[327px] w-full justify-between mb-[36px] mt-[31px] md:max-w-[573px]">
+        <div className="flex max-w-[327px] w-full justify-between mb-[36px] mt-[31px] md:max-h-[481px] md:max-w-[573px] lg:max-w-[730px] lg:max-h-[444px] h-full">
           <h1 className="mr-[110px] leading-[39px] text-[26px] font-[700] not-italic text-secondary-400 lowercase">
             devfinder
           </h1>
@@ -18,6 +18,7 @@ export const MainPage = () => {
             <img src={light} alt="" className="ml-[16px]" />
           </div>
         </div>
+
         <Input />
         <User />
       </div>
