@@ -47,7 +47,7 @@ const User = (props: IUser) => {
               alt=""
               className="max-w-[70px] max-h-[70px] w-full h-full md:max-w-[117px] md:max-h-[117px]  lg:hidden rounded-[100px]"
             />
-            <div className=" pt-[33px] md:pl-[41px] pl-[19.5px] lg:flex lg:w-full lg:justify-start lg:p-[0]">
+            <div className=" pt-[33px] md:pl-[41px] pl-[19.5px] lg:flex lg:w-full lg:justify-start lg:p-[0] md:pt-[0]">
               <div>
                 <p className="font-[700] text-[16px] leading-[24px] text-secondary-400 not-italic pb-[5px] lg:pr-[138px]">
                   {name}
