@@ -50,7 +50,7 @@ const User = (props: IUser) => {
             <div className=" pt-[33px] md:pl-[41px] pl-[19.5px] lg:flex lg:w-full lg:justify-start lg:p-[0] md:pt-[0]">
               <div>
                 <p className="font-[700] text-[16px] leading-[24px] text-secondary-400 not-italic pb-[5px] lg:pr-[138px]">
-                  {name}
+                  {name === null ? "Name Not Available" : name}
                 </p>
                 <p className="leading-[19px] text-[13px] font-[400] text-secondary-500 not-italic pb-[6px] lg:pb-[20px]">
                   @{loginName}

@@ -9,7 +9,7 @@ export const MainPage = () => {
   const [user, setUser] = useState([] as any);
 
   useEffect(() => {
-    const getData = async (user?: string) => {
+    const getData = async () => {
       const response = await axios.get(`https://api.github.com/users/Josh-D18`);
       setUser(response.data);
     };
@@ -31,25 +31,24 @@ export const MainPage = () => {
           </div>
         </div>
 
-        <Input />
+        <Input setUser={setUser} />
         {user &&
           [user].map((user) => (
-            <div key={user.id}>
-              <User
-                icon={user.avatar_url}
-                bio={user.bio}
-                createdAt={user.created_at}
-                followers={user.followers}
-                following={user.following}
-                publicRepos={user.public_repos}
-                twitter={user.twitter_username}
-                name={user.name}
-                loginName={user.login}
-                location={user.location}
-                company={user.company}
-                blog={user.blog}
-              />
-            </div>
+            <User
+              key={user.id}
+              icon={user.avatar_url}
+              bio={user.bio}
+              createdAt={user.created_at}
+              followers={user.followers}
+              following={user.following}
+              publicRepos={user.public_repos}
+              twitter={user.twitter_username}
+              name={user.name}
+              loginName={user.login}
+              location={user.location}
+              company={user.company}
+              blog={user.blog}
+            />
           ))}
       </div>
     </div>
