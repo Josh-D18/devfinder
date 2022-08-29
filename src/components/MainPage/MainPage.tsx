@@ -16,8 +16,6 @@ export const MainPage = () => {
     getData();
   }, []);
 
-  console.log(user);
-
   return (
     <div className="w-full h-full bg-secondary-300 ">
       <div className="flex flex-col items-center px-[24px] justify-between  m-[0_auto] h-auto">
