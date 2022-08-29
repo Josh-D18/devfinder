@@ -4,13 +4,15 @@ import twitter from "../../../../assets/icon-twitter.svg";
 import company from "../../../../assets/icon-company.svg";
 
 interface ILinks {
-  locationLink?: string;
-  websiteLink?: string;
-  twitterLink?: string;
-  companyLink?: string;
+  locationLink: string;
+  blogLink: string;
+  twitterLink: string;
+  companyLink: string;
 }
 
 const Links = (props: ILinks) => {
+  const { locationLink, blogLink, twitterLink, companyLink } = props;
+
   return (
     <div className="mb-[48px] md:mb-[40px] w-[185px] md:flex md:items-center md:w-[429px] md:pl-[40px] lg:pl-[0] lg:mb-[48px]">
       <div className="md:mr-[65px]">

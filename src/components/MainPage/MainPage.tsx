@@ -1,13 +1,22 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Input from "../Input/Input";
 // import dark from "../../assets/icon-moon.svg";
 import light from "../../assets/icon-sun.svg";
 import User from "../User/User";
-import { getUserApi } from "../api/getUser";
+import axios from "axios";
 
 export const MainPage = () => {
-  console.log(getUserApi());
-  useEffect(() => {}, []);
+  const [user, setUser] = useState([] as any);
+
+  useEffect(() => {
+    const getData = async (user?: string) => {
+      const response = await axios.get(`https://api.github.com/users/Josh-D18`);
+      setUser(response.data);
+    };
+    getData();
+  }, []);
+
+  console.log(user);
 
   return (
     <div className="w-full h-full bg-secondary-300 ">
@@ -25,7 +34,26 @@ export const MainPage = () => {
         </div>
 
         <Input />
-        <User />
+        {user &&
+          [user].map((user) => (
+            <div key={user.id}>
+              <User
+                icon={user.avatar_url}
+                bio={user.bio}
+                createdAt={user.created_at}
+                followers={user.followers}
+                following={user.following}
+                publicRepos={user.public_repos}
+                twitter={user.twitter_username}
+                website={user.url}
+                name={user.name}
+                loginName={user.login}
+                location={user.location}
+                company={user.company}
+                blog={user.blog}
+              />
+            </div>
+          ))}
       </div>
     </div>
   );
