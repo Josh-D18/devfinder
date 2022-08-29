@@ -45,7 +45,6 @@ export const MainPage = () => {
                 following={user.following}
                 publicRepos={user.public_repos}
                 twitter={user.twitter_username}
-                website={user.url}
                 name={user.name}
                 loginName={user.login}
                 location={user.location}

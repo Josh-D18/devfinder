@@ -1,6 +1,4 @@
-import icon from "../../assets/favicon-32x32.png";
 import Links from "./ui/Links/Links";
-import Moment from "moment";
 import moment from "moment";
 
 interface IUser {
@@ -11,7 +9,6 @@ interface IUser {
   following: number;
   publicRepos: number;
   twitter: string;
-  website: string;
   name: string;
   loginName: string;
   location: string;
@@ -28,7 +25,6 @@ const User = (props: IUser) => {
     following,
     publicRepos,
     twitter,
-    website,
     name,
     loginName,
     location,
@@ -36,10 +32,9 @@ const User = (props: IUser) => {
     blog,
   } = props;
 
-  console.log(createdAt);
   return (
     <div className="m-[0_auto]">
-      <div className="w-[327px] bg-secondary-200 rounded-[15px] h-[517px] mx-[auto] mt-[16px] mb-[79px] md:w-[573px] md:h-[481px] lg:w-[730px] lg:flex lg:h-[419px]">
+      <div className="w-[327px] bg-secondary-200 rounded-[15px] mx-[auto] mt-[16px] mb-[79px] md:w-[573px] md:h-[481px] lg:w-[730px] lg:flex lg:h-[419px] h-full">
         <img
           src={icon}
           alt=""
@@ -70,8 +65,7 @@ const User = (props: IUser) => {
           </div>
           <div>
             <p className="px-[24px] pt-[33px] font-[400] text-[13px] leading-[25px] text-secondary-400 md:px-[40px] lg:pr-[48px] lg:py-[0] lg:pl-0">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec
-              odio. Quisque volutpat mattis eros.
+              {bio === null ? "Bio Not Available" : bio}
             </p>
           </div>
           <div className="w-[279px] h-[85px] bg-secondary-300 flex justify-center items-center m-auto rounded-[10px] mt-[23px] mb-[24px] md:w-[493px] md:justify-start md:mb-[30px] lg:w-[480px] lg:h-[85px] lg:mt-[32px] lg:mx-[0px] ">
