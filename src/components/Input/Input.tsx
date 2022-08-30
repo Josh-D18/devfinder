@@ -2,6 +2,7 @@ import searchIcon from "../../assets/icon-search.svg";
 import styles from "./Input.module.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
+import { useState } from "react";
 
 type Inputs = {
   githubUser: string;
@@ -13,6 +14,7 @@ interface IInput {
 
 const Input = (props: IInput) => {
   const { setUser } = props;
+  const [errorRequestMessage, setErrorRequestMessage] = useState<string>("");
 
   const {
     register,
@@ -21,10 +23,18 @@ const Input = (props: IInput) => {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const response = await axios.get(
-      `https://api.github.com/users/${data.githubUser}`
-    );
-    setUser(response.data);
+    try {
+      const response = await axios.get(
+        `https://api.github.com/users/${data.githubUser}`
+      );
+      setErrorRequestMessage("");
+      setUser(response.data);
+    } catch (error: any) {
+      console.log(error, error.code === "ERR_BAD_REQUEST", errors);
+      if (error.code === "ERR_BAD_REQUEST") {
+        setErrorRequestMessage("Not Found!");
+      }
+    }
   };
 
   return (
@@ -41,6 +51,7 @@ const Input = (props: IInput) => {
         placeholder="Search GitHub username…"
         {...register("githubUser", { required: true })}
       />
+      <p className="hidden md:absolute">{errorRequestMessage}</p>
       <div className="absolute">
         <button
           type="submit"

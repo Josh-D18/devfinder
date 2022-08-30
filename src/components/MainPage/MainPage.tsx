@@ -17,8 +17,8 @@ export const MainPage = () => {
   }, []);
 
   return (
-    <div className="w-full h-full bg-secondary-300 ">
-      <div className="flex flex-col items-center px-[24px] justify-between  m-[0_auto] h-auto">
+    <div className="w-full h-full bg-secondary-300">
+      <div className="flex flex-col items-center px-[24px] justify-between  m-[0_auto] h-auto bg-secondary-300">
         <div className="flex max-w-[327px] w-full justify-between mb-[36px] mt-[31px] md:max-h-[481px] md:max-w-[573px] lg:max-w-[730px] lg:max-h-[444px] h-full">
           <h1 className="mr-[110px] leading-[39px] text-[26px] font-[700] not-italic text-secondary-400 lowercase">
             devfinder
@@ -32,24 +32,21 @@ export const MainPage = () => {
         </div>
 
         <Input setUser={setUser} />
-        {user &&
-          [user].map((user) => (
-            <User
-              key={user.id}
-              icon={user.avatar_url}
-              bio={user.bio}
-              createdAt={user.created_at}
-              followers={user.followers}
-              following={user.following}
-              publicRepos={user.public_repos}
-              twitter={user.twitter_username}
-              name={user.name}
-              loginName={user.login}
-              location={user.location}
-              company={user.company}
-              blog={user.blog}
-            />
-          ))}
+        <User
+          key={user.id}
+          icon={user.avatar_url}
+          bio={user.bio}
+          createdAt={user.created_at}
+          followers={user.followers}
+          following={user.following}
+          publicRepos={user.public_repos}
+          twitter={user.twitter_username}
+          name={user.name}
+          loginName={user.login}
+          location={user.location}
+          company={user.company}
+          blog={user.blog}
+        />
       </div>
     </div>
   );
