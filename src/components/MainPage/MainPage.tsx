@@ -67,6 +67,7 @@ export const MainPage = () => {
         </div>
 
         <Input setUser={setUser} screenVersion={screenVersion} />
+
         <User
           key={user.id}
           icon={user.avatar_url}

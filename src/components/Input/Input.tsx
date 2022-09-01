@@ -4,6 +4,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import axios from "axios";
 import { useState } from "react";
 import clsx from "clsx";
+import { useSearchParams } from "react-router-dom";
 
 type Inputs = {
   githubUser: string;
@@ -17,6 +18,9 @@ interface IInput {
 const Input = (props: IInput) => {
   const { setUser, screenVersion } = props;
   const [errorRequestMessage, setErrorRequestMessage] = useState<string>("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  let params = new URLSearchParams(window.location.search);
+  const query = searchParams.get("?githubUser");
 
   const {
     register,
@@ -30,6 +34,7 @@ const Input = (props: IInput) => {
         `https://api.github.com/users/${data.githubUser}`
       );
       setErrorRequestMessage("");
+      // setSearchParams(`${params}${data.githubUser}`);
       setUser(response.data);
     } catch (error: any) {
       console.log(error, error.code === "ERR_BAD_REQUEST", errors);
@@ -38,8 +43,7 @@ const Input = (props: IInput) => {
       }
     }
   };
-  console.log(errorRequestMessage.length);
-
+  // console.log(window.location.search, searchParams, query, params);
   return (
     <form className="flex justify-center" onSubmit={handleSubmit(onSubmit)}>
       <div className="absolute w-[20.05px] h-[20px]">
