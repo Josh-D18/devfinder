@@ -44,7 +44,10 @@ export const MainPage = () => {
           >
             devfinder
           </h1>
-          <div className="flex items-center" onClick={handleClick}>
+          <div
+            className="flex items-center cursor-pointer hover:opacity-70"
+            onClick={handleClick}
+          >
             {screenVersion ? (
               <>
                 <p className="font-[700] text-[13px] leading-[19px] tracking-[2.5px] text-tertiary-300">

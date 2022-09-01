@@ -27,8 +27,9 @@ const Links = (props: ILinks) => {
           />
           <p
             className={clsx(
-              "font-[400] text-[13px] leading-[19px] not-italic",
-              screenVersion ? "text-tertiary-600" : "text-secondary-400"
+              "font-[400] text-[13ax] leading-[19px] not-italic",
+              screenVersion ? "text-tertiary-600" : "text-secondary-400",
+              locationLink === null && "opacity-75 cursor-auto"
             )}
           >
             {locationLink === null ? "Not Available" : locationLink}
@@ -40,14 +41,16 @@ const Links = (props: ILinks) => {
             className="pl-[24px] pr-[13.01px] md:pl-[0]"
             alt="blog"
           />
-          <p
+          <a
+            href={`https://${blogLink}.com`}
             className={clsx(
-              "font-[400] text-[13px] leading-[19px] not-italic text-secondary-400",
-              screenVersion ? "text-tertiary-600" : "text-secondary-400"
+              "font-[400] text-[13px] leading-[19px] not-italic text-secondary-400 hover:underline",
+              screenVersion ? "text-tertiary-600" : "text-secondary-400",
+              blogLink === "" && "opacity-75 cursor-auto"
             )}
           >
             {blogLink === "" ? "Not Available" : blogLink}
-          </p>
+          </a>
         </div>
       </div>
 
@@ -58,14 +61,16 @@ const Links = (props: ILinks) => {
             alt="twitter"
             className="pl-[24px] pr-[13px] md:pl-[0]"
           />
-          <p
+          <a
+            href={`https://twitter.com/${twitterLink}`}
             className={clsx(
-              "font-[400] text-[13px] leading-[19px] not-italic text-secondary-400",
-              screenVersion ? "text-tertiary-600" : "text-secondary-400"
+              "font-[400] text-[13px] leading-[19px] not-italic text-secondary-400 hover:underline cursor-pointer",
+              screenVersion ? "text-tertiary-600" : "text-secondary-400",
+              twitterLink === null && "opacity-75 cursor-auto"
             )}
           >
             {twitterLink === null ? "Not Available" : twitterLink}
-          </p>
+          </a>
         </div>
         <div className="flex items-center pb-[16px] max-w-[208px]">
           <img
@@ -76,7 +81,8 @@ const Links = (props: ILinks) => {
           <p
             className={clsx(
               "font-[400] text-[13px] leading-[19px] not-italic text-secondary-400",
-              screenVersion ? "text-tertiary-600" : "text-secondary-400"
+              screenVersion ? "text-tertiary-600" : "text-secondary-400",
+              companyLink === null && "opacity-75 cursor-auto"
             )}
           >
             {companyLink === null ? "Not Available" : companyLink}
