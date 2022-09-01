@@ -64,11 +64,11 @@ const Input = (props: IInput) => {
           {errorRequestMessage}
         </p>
       </div>
-      <div className="absolute">
+      <div className="absolute top-[1px]">
         <button
           type="submit"
           className={clsx(
-            "bg-secondary-500 rounded-[10px] w-[84px] h-[46px] relative top-[1px] left-[120px] mr-[7px] mb-[7.5px] mt-[6.5px] text-secondary-400 md:left-[230px] md:top-[3px] md:w-[106px] md:h-[50px] lg:left-[305px] hover:opacity-70",
+            "bg-secondary-500 rounded-[10px] w-[84px] h-[46px] relative top-[106px] left-[120px] mr-[7px] mb-[7.5px] mt-[6.5px] text-secondary-400 md:left-[230px] md:top-[109px] md:w-[106px] md:h-[50px] lg:left-[305px] hover:opacity-70",
             errorRequestMessage.length > 0 && "opacity-60"
           )}
         >
